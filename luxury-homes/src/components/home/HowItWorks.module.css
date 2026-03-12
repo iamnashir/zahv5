@@ -1,0 +1,90 @@
+.section {
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.stepNum {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  color: var(--color-rich-gold);
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid var(--border-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-rich-gold);
+  margin-bottom: 1.5rem;
+  transition: all var(--transition-base);
+  position: relative;
+  z-index: 2;
+}
+
+.step:hover .iconWrapper {
+  background: rgba(212, 175, 55, 0.15);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-4px);
+}
+
+.stepTitle {
+  font-size: 1.1rem;
+  color: var(--color-pure-white);
+  margin-bottom: 0.75rem;
+  font-family: var(--font-heading);
+}
+
+.stepDesc {
+  color: var(--color-silver);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  max-width: 220px;
+}
+
+/* Connector line between steps (desktop only) */
+.connector {
+  position: absolute;
+  top: 40px; /* align with center of iconWrapper */
+  right: -50%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-rich-gold), transparent);
+  opacity: 0.3;
+  z-index: 1;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .connector {
+    display: block;
+  }
+}

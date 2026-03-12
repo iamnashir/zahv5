@@ -1,0 +1,69 @@
+.section {
+  padding: var(--spacing-xl) 0;
+  background: var(--bg-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: var(--bg-tertiary);
+  padding: 2.5rem 2rem;
+  transition: background var(--transition-base);
+}
+
+.card:hover {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.card:hover .iconBox {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--color-rich-gold);
+}
+
+.iconBox {
+  width: 56px;
+  height: 56px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-rich-gold);
+  margin-bottom: 1.25rem;
+  transition: all var(--transition-base);
+}
+
+.cardTitle {
+  font-size: 1rem;
+  color: var(--color-pure-white);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+.cardDesc {
+  color: var(--color-silver);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}

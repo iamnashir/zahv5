@@ -1,0 +1,126 @@
+.section {
+  padding: var(--spacing-xl) 0;
+  background: var(--bg-primary);
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: left;
+}
+
+.headerRow h2 {
+  margin-bottom: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform var(--transition-luxury), box-shadow var(--transition-luxury), border-color var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--border-gold);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.category {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(212, 175, 55, 0.9);
+  color: var(--color-onyx-black);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  z-index: 2;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.06);
+}
+
+.content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-silver);
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-pure-white);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.excerpt {
+  color: var(--color-silver);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.readMore {
+  color: var(--color-rich-gold);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: gap var(--transition-fast);
+}
+
+.card:hover .readMore {
+  letter-spacing: 1px;
+}

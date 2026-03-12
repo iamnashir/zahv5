@@ -1,0 +1,244 @@
+.page {
+  padding-top: 90px;
+  background: var(--bg-primary);
+}
+
+.hero {
+  padding: 5rem 0 4rem;
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  margin: 0.5rem 0 1rem;
+}
+
+.hero p {
+  color: var(--color-silver);
+  font-size: 1.1rem;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Stats */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+  margin: -2rem 0 5rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .statsRow { grid-template-columns: repeat(4, 1fr); }
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: var(--bg-tertiary);
+  gap: 0.5rem;
+}
+
+.statIcon { color: var(--color-rich-gold); margin-bottom: 0.5rem; }
+
+.statVal {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-silver);
+}
+
+/* Story Section */
+.storySection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  padding: 5rem 0;
+}
+
+@media (min-width: 1024px) {
+  .storySection { grid-template-columns: 1fr 1fr; }
+}
+
+.storyText {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.storyText h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: var(--color-pure-white);
+  margin-bottom: 1.5rem;
+}
+
+.storyText p {
+  color: var(--color-silver);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Timeline */
+.storyTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 60px 28px 1fr;
+  align-items: start;
+  gap: 16px;
+  padding-bottom: 1.5rem;
+}
+
+.timelineYear {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-rich-gold);
+  padding-top: 3px;
+  text-align: right;
+}
+
+.timelineLine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-top: 6px;
+}
+
+.timelineLine span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-rich-gold);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.timelineLine span::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 40px;
+  background: var(--border-gold);
+}
+
+.timelineEvent {
+  color: var(--color-silver);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Team */
+.teamSection {
+  padding: var(--spacing-xl) 0;
+  background: var(--bg-secondary);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .teamGrid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.teamCard {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  transition: border-color var(--transition-base);
+}
+
+.teamCard:hover { border-color: var(--border-gold); }
+
+.teamImgWrapper {
+  height: 220px;
+  overflow: hidden;
+}
+
+.teamImgWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.teamCard:hover .teamImgWrapper img { transform: scale(1.05); }
+
+.teamInfo {
+  padding: 1.25rem;
+  background: var(--bg-tertiary);
+  text-align: center;
+}
+
+.teamInfo strong {
+  display: block;
+  color: var(--color-pure-white);
+  font-size: 1rem;
+  font-family: var(--font-heading);
+  margin-bottom: 4px;
+}
+
+.teamInfo span {
+  color: var(--color-rich-gold);
+  font-size: 0.8rem;
+}
+
+/* Press */
+.pressSection {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.pressLabel {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: var(--color-silver);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.pressLogos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 3rem;
+}
+
+.pressLogo {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 1px;
+  transition: color var(--transition-base);
+}
+
+.pressLogo:hover { color: var(--color-rich-gold); }
